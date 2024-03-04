@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog</title>
+</head>
+
+<body>
+<table>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Building</td>
+            <td>Floor</td>
+            <td>Room number</td>
+            <td>has Printer</td>
+            <td>has Standing Desk</td>
+            <td>Number of sockets</td>
+            <td>is Accessible</td>
+
+
+        </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="room : ${rooms}">
+        <tr>
+            <td th:text="${room.getID()}">...</td>
+            <td th:text="${room.getBuilding()}">...</td>
+            <td th:text="${room.getFloor()}">...</td>
+            <td th:text="${room.getRoomNumber()}">...</td>
+            <td th:text="${room.hasPrinter()}">...</td>
+            <td th:text="${room.hasStandingDesk()}">...</td>
+            <td th:text="${room.getNumberOfSockets()}">...</td>
+            <td th:text="${room.isAccessable()}">...</td>
+    </th:block>
+    </tbody>
+</table>
+    <form action="Booking.html">
+        <label for="RoomID">RaumID</label>
+        <input type="text" id="RoomID" name="RoomID">
+    </form>
+</body>
+</html>
